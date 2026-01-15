@@ -1,3 +1,5 @@
+--- START OF FILE Paste January 15, 2026 - 2:07PM ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -194,6 +196,32 @@
             font-weight: 300;
         }
         
+        /* Neon Text Animation */
+        @keyframes neon-pulse {
+            0%, 100% {
+                text-shadow:
+                    0 0 7px #fff,
+                    0 0 10px #fff,
+                    0 0 21px #fff,
+                    0 0 42px var(--accent-light),
+                    0 0 82px var(--accent-light),
+                    0 0 92px var(--accent-light),
+                    0 0 102px var(--accent-light),
+                    0 0 151px var(--accent-light);
+            }
+            50% {
+                text-shadow:
+                    0 0 4px #fff,
+                    0 0 8px #fff,
+                    0 0 15px #fff,
+                    0 0 30px var(--accent), /* Slightly stronger accent */
+                    0 0 60px var(--accent),
+                    0 0 70px var(--accent),
+                    0 0 80px var(--accent),
+                    0 0 120px var(--accent);
+            }
+        }
+
         .hero h1 {
             font-family: 'Playfair Display', serif; /* Specifically set the font as requested */
             font-size: clamp(3rem, 6vw, 5.5rem);
@@ -201,17 +229,8 @@
             margin-bottom: 25px;
             line-height: 1.1;
             letter-spacing: -1px;
-            /* Neon Text Effect */
             color: #fff;
-            text-shadow: 
-                0 0 7px #fff,
-                0 0 10px #fff,
-                0 0 21px #fff,
-                0 0 42px var(--accent-light),
-                0 0 82px var(--accent-light),
-                0 0 92px var(--accent-light),
-                0 0 102px var(--accent-light),
-                0 0 151px var(--accent-light);
+            animation: neon-pulse 2s infinite alternate ease-in-out; /* Apply animation */
         }
         
         /* The hero-description class is removed from HTML, so this CSS is no longer actively used */
@@ -852,6 +871,105 @@
             font-weight: 500;
         }
         
+        /* Developer Section Styling */
+        .developer-section {
+            background: #0f0f0f;
+            color: var(--white);
+            padding: 100px 40px; /* Use similar padding to other sections */
+            border-top: 2px solid var(--primary);
+            max-width: 1400px;
+            margin: 0 auto; /* Center the content */
+        }
+
+        .developer-content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .developer-subtitle {
+            color: var(--accent); /* Changed to accent for better contrast on dark bg */
+            letter-spacing: 3px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .developer-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .developer-title span {
+            color: var(--primary);
+        }
+        
+        .developer-description {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 40px;
+        }
+
+        .developer-contact-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .developer-contact-card h4 {
+            font-family: var(--font-heading);
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+
+        .developer-contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .developer-contact-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .developer-contact-icon-wrapper {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 1.3rem;
+        }
+        .developer-contact-icon-wrapper.phone { background: rgba(212, 165, 116, 0.1); color: var(--primary); }
+        .developer-contact-icon-wrapper.whatsapp { background: rgba(37, 211, 102, 0.1); color: var(--success); }
+        .developer-contact-icon-wrapper.email { background: rgba(231, 76, 60, 0.1); color: #e74c3c; } /* Using specific red for email icon */
+
+
+        .developer-contact-item-info h6 {
+            margin-bottom: 5px;
+            color: var(--white);
+            font-size: 1.1rem;
+        }
+
+        .developer-contact-item-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+        
         /* Footer */
         footer {
             background: var(--dark);
@@ -943,7 +1061,7 @@
             display: flex;
             flex-direction: column;
             gap: 15px; /* Space between buttons */
-            z-index: 999;
+            z-index: 999; /* Ensure it's above most content */
         }
 
         .floating-contact-buttons a {
@@ -1225,6 +1343,11 @@
             .footer-content {
                 grid-template-columns: 1fr 1fr;
             }
+
+            .developer-content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -1293,6 +1416,13 @@
                 width: 50px;
                 height: 50px;
                 font-size: 1.5rem;
+            }
+
+            .developer-section {
+                padding: 60px 20px;
+            }
+            .developer-contact-card {
+                padding: 30px;
             }
         }
     </style>
@@ -1912,107 +2042,53 @@
         </div>
     </section>
 
-    <!-- The developer section as a separate multi-column block has been removed as per request. -->
-     
     <!-- Developer Section: Muhammad Umair -->
-    <section class="section-padding" style="background: #0f0f0f; color: #ffffff; border-top: 2px solid var(--primary);">
-        <div class="container">
-            <div class="row align-items-center">
-                <!-- Text Side -->
-                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                    <div class="subtitle" style="color: var(--primary); letter-spacing: 3px; font-weight: 600; text-transform: uppercase; margin-bottom: 15px;">Digital Architect</div>
-                    <h2 class="display-5 fw-bold royal-font mb-4" style="color: var(--white);">Developed by <br><span style="color: var(--primary);">Muhammad Umair</span></h2>
-                    <p class="text-secondary mb-4" style="line-height: 1.8; font-size: 1.1rem;">
-                        This premium digital experience was conceptualized and crafted with excellence by Muhammad Umair. Specializing in 7-star restaurant solutions, ensuring every pixel reflects luxury and tradition.
-                    </p>
+    <section class="developer-section">
+        <div class="developer-content-wrapper">
+            <!-- Text Side -->
+            <div class="developer-text-content" data-aos="fade-right">
+                <div class="developer-subtitle">Digital Architect</div>
+                <h2 class="developer-title">Developed by <br><span>Muhammad Umair</span></h2>
+                <p class="developer-description">
+                    This premium digital experience was conceptualized and crafted with excellence by Muhammad Umair. Specializing in 7-star restaurant solutions, ensuring every pixel reflects luxury and tradition.
+                </p>
+            </div>
+            <!-- Contact Side -->
+            <div class="developer-contact-card" data-aos="fade-left">
+                <h4>Contact Developer</h4>
+                
+                <div class="developer-contact-item">
+                    <div class="developer-contact-icon-wrapper phone">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="developer-contact-item-info">
+                        <h6>Umair Amir</h6>
+                        <p>+92 304 9472735</p>
+                    </div>
                 </div>
-                <!-- Contact Side -->
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="p-5 rounded-4 shadow-lg" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(212, 165, 116, 0.2);">
-                        <h4 class="royal-font mb-4" style="color: var(--primary);">Contact Developer</h4>
-                        
-                        <div class="d-flex align-items-center mb-4">
-                            <div style="width: 45px; height: 45px; background: rgba(212, 165, 116, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                <i class="fas fa-phone-alt text-primary"></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-0 text-white">Umair Amir</h6>
-                                <p class="mb-0 small text-secondary">+92 304 9472735</p>
-                            </div>
-                        </div>
 
-                        <div class="d-flex align-items-center mb-4">
-                            <div style="width: 45px; height: 45px; background: rgba(37, 211, 102, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                <i class="fab fa-whatsapp text-success"></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-0 text-white">Ayesa Malik (WhatsApp)</h6>
-                                <p class="mb-0 small text-secondary">+92 3184195665</p>
-                            </div>
-                        </div>
+                <div class="developer-contact-item">
+                    <div class="developer-contact-icon-wrapper whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="developer-contact-item-info">
+                        <h6>Ayesa Malik (WhatsApp)</h6>
+                        <p>+92 3184195665</p>
+                    </div>
+                </div>
 
-                        <div class="d-flex align-items-center">
-                            <div style="width: 45px; height: 45px; background: rgba(231, 76, 60, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                <i class="fas fa-envelope text-danger"></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-0 text-white">Email Support</h6>
-                                <p class="mb-0 small text-secondary">muhammadumairamir12@gmail.com</p>
-                            </div>
-                        </div>
+                <div class="developer-contact-item">
+                    <div class="developer-contact-icon-wrapper email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="developer-contact-item-info">
+                        <h6>Email Support</h6>
+                        <p>muhammadumairamir12@gmail.com</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-about">
-                <h3>Modern<span>Village</span></h3>
-                <p>Experience unparalleled luxury and European elegance in the heart of Lahore. Where every stay is a celebration of comfort, style, and exceptional service.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#rooms">Rooms</a></li>
-                    <li><a href="#facilities">Facilities</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#booking">Book Now</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Facilities</h4>
-                <ul>
-                    <li><a href="#facilities">Swimming Pool</a></li>
-                    <li><a href="#facilities">Restaurant & Bar</a></li>
-                    <li><a href="#facilities">Luxury Spa</a></li>
-                    <li><a href="#facilities">Kids Play Area</a></li>
-                    <li><a href="#facilities">Valet Parking</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="tel:+923184195665">+92 318 4195665</a></li>
-                    <li><a href="https://wa.me/923184195665">WhatsApp Us</a></li>
-                    <li><a href="mailto:info@modernvillage.com">info@modernvillage.com</a></li>
-                    <li><a href="#">Careers</a></li>
-                </ul>
-            </div>
-        </div>
-    
-    
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -2333,64 +2409,8 @@
                     minCheckout.setDate(minCheckout.getDate() + 1);
                     checkOutInput.min = minCheckout.toISOString().split('T')[0];
                 }
-            } else {
-                document.getElementById('summaryNights').textContent = '0';
-                document.getElementById('summaryTotal').textContent = 'PKR 0';
             }
         }
-
-        // Handle form submission
-        document.getElementById('bookingForm')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('guestName').value,
-                phone: document.getElementById('guestPhone').value,
-                email: document.getElementById('guestEmail').value,
-                checkIn: document.getElementById('checkIn').value,
-                checkOut: document.getElementById('checkOut').value,
-                guests: document.getElementById('guests').value,
-                roomType: selectedRoomType,
-                total: document.getElementById('summaryTotal').textContent
-            };
-            
-            const message = `🏨 *Modern Village Pakistan - Booking Request*\n\n` +
-                          `👤 Name: ${formData.name}\n` +
-                          `📱 Phone: ${formData.phone}\n` +
-                          `📧 Email: ${formData.email || 'N/A'}\n\n` +
-                          `🛏️ Room: ${formData.roomType}\n` +
-                          `📅 Check-in: ${formData.checkIn}\n` +
-                          `📅 Check-out: ${formData.checkOut}\n` +
-                          `👥 Guests: ${formData.guests}\n\n` +
-                          `💰 Total: ${formData.total}`;
-            
-            const whatsappUrl = `https://wa.me/923184195665?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-            
-            closeBooking();
-            alert('✅ Reservation request sent! Our team will contact you shortly via WhatsApp to confirm your booking at Modern Village Pakistan.');
-        });
-
-        // Close modal on outside click
-        document.getElementById('bookingModal')?.addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeBooking();
-            }
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
     </script>
 </body>
 </html>
