@@ -195,20 +195,32 @@
         }
         
         .hero h1 {
-            font-family: var(--font-heading);
+            font-family: 'Playfair Display', serif; /* Specifically set the font as requested */
             font-size: clamp(3rem, 6vw, 5.5rem);
             font-weight: 800;
             margin-bottom: 25px;
             line-height: 1.1;
             letter-spacing: -1px;
+            /* Neon Text Effect */
+            color: #fff;
+            text-shadow: 
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px var(--accent-light),
+                0 0 82px var(--accent-light),
+                0 0 92px var(--accent-light),
+                0 0 102px var(--accent-light),
+                0 0 151px var(--accent-light);
         }
         
-        .hero-description {
+        /* The hero-description class is removed from HTML, so this CSS is no longer actively used */
+        /* .hero-description {
             font-size: 1.3rem;
             margin-bottom: 45px;
             opacity: 0.95;
             line-height: 1.8;
-        }
+        } */
         
         .hero-btns {
             display: flex;
@@ -927,7 +939,7 @@
         .floating-contact-buttons {
             position: fixed;
             bottom: 30px;
-            right: 30px;
+            right: 30px; /* Changed from left to right */
             display: flex;
             flex-direction: column;
             gap: 15px; /* Space between buttons */
@@ -1274,7 +1286,7 @@
 
             .floating-contact-buttons {
                 bottom: 20px;
-                right: 20px;
+                right: 20px; /* Changed from left to right */
                 gap: 10px;
             }
             .floating-contact-buttons a {
@@ -1308,8 +1320,7 @@
     <section id="home" class="hero">
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
             <p class="hero-subtitle">WELCOME TO LUXURY</p>
-            <h1>Experience European Elegance in Lahore at Modern Village Pakistan</h1>
-            <p class="hero-description">Where modern sophistication meets traditional hospitality. Immerse yourself in world-class amenities, exquisite dining, and unparalleled comfort.</p>
+            <h1>MODERN VILLAGE PAKISTAN</h1>
             
             <div class="hero-btns">
                 <a href="#booking" class="btn btn-primary">
@@ -1901,7 +1912,9 @@
         </div>
     </section>
 
-        <!-- Developer Section: Muhammad Umair -->
+    <!-- The developer section as a separate multi-column block has been removed as per request. -->
+     
+    <!-- Developer Section: Muhammad Umair -->
     <section class="section-padding" style="background: #0f0f0f; color: #ffffff; border-top: 2px solid var(--primary);">
         <div class="container">
             <div class="row align-items-center">
@@ -1952,6 +1965,54 @@
             </div>
         </div>
     </section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Modern<span>Village</span></h3>
+                <p>Experience unparalleled luxury and European elegance in the heart of Lahore. Where every stay is a celebration of comfort, style, and exceptional service.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#booking">Book Now</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Facilities</h4>
+                <ul>
+                    <li><a href="#facilities">Swimming Pool</a></li>
+                    <li><a href="#facilities">Restaurant & Bar</a></li>
+                    <li><a href="#facilities">Luxury Spa</a></li>
+                    <li><a href="#facilities">Kids Play Area</a></li>
+                    <li><a href="#facilities">Valet Parking</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+923184195665">+92 318 4195665</a></li>
+                    <li><a href="https://wa.me/923184195665">WhatsApp Us</a></li>
+                    <li><a href="mailto:info@modernvillage.com">info@modernvillage.com</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+    
+    
     <!-- Footer -->
     <footer>
         <div class="footer-content">
